@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<script>document.documentElement.classList.remove('no-js');</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Accessibility | Jubilee Prosthetics & Orthotics</title>
+<meta name="description" content="Jubilee Prosthetics & Orthotics' commitment to a website that is usable by everyone." />
+<link rel="canonical" href="https://www.jubileeprostheticsandorthotics.com/accessibility.html" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.jubileeprostheticsandorthotics.com/accessibility.html" />
+<meta property="og:title" content="Accessibility | Jubilee Prosthetics & Orthotics" />
+<meta property="og:description" content="Jubilee's commitment to a website usable by everyone." />
+<meta property="og:image" content="https://www.jubileeprostheticsandorthotics.com/assets/images/brand/og-share.jpg" />
+<meta property="og:site_name" content="Jubilee Prosthetics &amp; Orthotics" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Accessibility | Jubilee Prosthetics & Orthotics" />
+<meta name="twitter:description" content="Jubilee's commitment to a website usable by everyone." />
+<meta name="twitter:image" content="https://www.jubileeprostheticsandorthotics.com/assets/images/brand/og-share.jpg" />
+<link rel="icon" type="image/svg+xml" href="assets/images/brand/J.svg" />
+<link rel="alternate icon" href="assets/images/brand/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700;800&family=Cascadia+Code:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/tokens.css" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="site-header"></header>
+<div id="mobile-nav" class="mobile-nav"></div>
+<main id="main">
+  <section class="hero" style="padding-bottom:1.5rem;">
+    <div class="container">
+      <div class="breadcrumbs"><a href="index.html">Home</a><span class="sep">/</span><span class="current">Accessibility</span></div>
+      <h1 style="max-width:20ch;">Accessibility Statement</h1>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0;">
+    <div class="container max-w-prose">
+      <p>Jubilee Prosthetics &amp; Orthotics is committed to making this website usable by as many people as possible, including people who use assistive technology.</p>
+      <h3>What this site aims to do</h3>
+      <ul>
+        <li>Provide semantic HTML structure and a logical heading hierarchy.</li>
+        <li>Support keyboard navigation throughout, including menus, forms, the FAQ accordion and the before/after slider.</li>
+        <li>Maintain visible focus states and sufficient color contrast.</li>
+        <li>Respect your device's reduced-motion setting.</li>
+        <li>Provide meaningful alt text on images once final photography is added.</li>
+      </ul>
+      <h3>Feedback</h3>
+      <p>If you experience any difficulty using this website, please contact Jubilee at <span id="a11y-email"></span> or <span id="a11y-phone"></span> — Jubilee welcomes feedback to keep improving.</p>
+    </div>
+  </section>
+</main>
+<footer class="site-footer" id="site-footer"></footer>
+<div id="wa-fab"></div>
+<div id="jg-launcher"></div>
+<div id="jg-panel"></div>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/components.js"></script>
+<script>
+  Jubilee.init("");
+  document.getElementById("a11y-email").textContent = SITE_CONFIG.email;
+  document.getElementById("a11y-phone").textContent = SITE_CONFIG.phoneDisplay;
+</script>
+</body>
+</html>

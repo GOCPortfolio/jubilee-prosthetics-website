@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<script>document.documentElement.classList.remove('no-js');</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Book an Appointment | Jubilee Prosthetics & Orthotics</title>
+<meta name="description" content="Request an appointment with Jubilee Prosthetics & Orthotics. Jubilee will contact you to confirm availability." />
+<link rel="canonical" href="book-appointment.html" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.jubileeprostheticsandorthotics.com/book-appointment.html" />
+<meta property="og:title" content="Book an Appointment | Jubilee Prosthetics & Orthotics" />
+<meta property="og:description" content="Request an appointment with Jubilee. We'll contact you to confirm availability." />
+<meta property="og:image" content="https://www.jubileeprostheticsandorthotics.com/assets/images/brand/og-share.jpg" />
+<meta property="og:site_name" content="Jubilee Prosthetics &amp; Orthotics" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Book an Appointment | Jubilee Prosthetics & Orthotics" />
+<meta name="twitter:description" content="Request an appointment with Jubilee. We'll contact you to confirm availability." />
+<meta name="twitter:image" content="https://www.jubileeprostheticsandorthotics.com/assets/images/brand/og-share.jpg" />
+<link rel="icon" type="image/svg+xml" href="assets/images/brand/J.svg" />
+<link rel="alternate icon" href="assets/images/brand/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700;800&family=Cascadia+Code:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/tokens.css" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="site-header"></header>
+<div id="mobile-nav" class="mobile-nav"></div>
+
+<main id="main">
+  <section class="hero" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="breadcrumbs"><a href="index.html">Home</a><span class="sep">/</span><span class="current">Book an Appointment</span></div>
+      <span class="eyebrow">BOOK AN APPOINTMENT</span>
+      <h1 style="max-width: 18ch;">Let's Start Your Journey.</h1>
+      <p class="lead">Share a few details and Jubilee's team will reach out to confirm your appointment. This form does not guarantee a specific time — Jubilee will confirm availability with you directly.</p>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container split split--60-40">
+      <form data-jubilee-form="appointment">
+        <div class="form-grid two-col">
+          <div class="field"><label for="a-name">Full name</label><input type="text" id="a-name" name="name" required autocomplete="name" /></div>
+          <div class="field"><label for="a-email">Email</label><input type="email" id="a-email" name="email" required autocomplete="email" /></div>
+        </div>
+        <div class="form-grid two-col" style="margin-top:1.25rem;">
+          <div class="field"><label for="a-phone">Phone number</label><input type="tel" id="a-phone" name="phone" required autocomplete="tel" /></div>
+          <div class="field"><label for="a-whatsapp">WhatsApp number</label><input type="tel" id="a-whatsapp" name="whatsapp" autocomplete="tel" /></div>
+        </div>
+        <div class="form-grid two-col" style="margin-top:1.25rem;">
+          <div class="field">
+            <label for="a-contact-method">Preferred contact method</label>
+            <select id="a-contact-method" name="contactMethod" required>
+              <option value="">Select one</option>
+              <option>Phone Call</option>
+              <option>WhatsApp</option>
+              <option>Email</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="a-service">Service / reason for appointment</label>
+            <select id="a-service" name="service" required id="a-service-select">
+              <option value="">Select a service</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-grid two-col" style="margin-top:1.25rem;">
+          <div class="field"><label for="a-date">Preferred date</label><input type="date" id="a-date" name="date" /></div>
+          <div class="field"><label for="a-time">Preferred time</label><input type="time" id="a-time" name="time" /></div>
+        </div>
+        <div class="field" style="margin-top:1.25rem;">
+          <label for="a-message">Message <span class="hint">(optional)</span></label>
+          <textarea id="a-message" name="message" placeholder="Anything you'd like Jubilee to know ahead of your appointment."></textarea>
+        </div>
+        <div class="field-checkbox" style="margin-top:1.25rem;">
+          <input type="checkbox" id="a-consent" required />
+          <label for="a-consent">I understand this form sends an appointment request and does not confirm a booking. Jubilee will contact me to confirm availability.</label>
+        </div>
+        <p class="form-privacy">Jubilee only collects what's needed to arrange your appointment. Please avoid sharing detailed medical history through this form — Jubilee's team will discuss your needs directly.</p>
+
+        <div class="hero-actions" style="margin-top:1.5rem;">
+          <button type="submit" class="btn btn-primary">Submit Appointment Request</button>
+          <a class="btn btn-whatsapp" href="#" id="book-wa-link">Chat on WhatsApp</a>
+        </div>
+        <div class="hero-actions" style="margin-top:0.75rem;">
+          <a class="btn btn-outline" href="#" id="book-call-link">Call Jubilee</a>
+          <a class="btn btn-outline" href="#" id="book-email-link">Send Email</a>
+        </div>
+        <div class="form-status" role="status"></div>
+      </form>
+
+      <aside class="card" style="padding:1.75rem; border:none; box-shadow: var(--shadow-soft); align-self:start;">
+        <h4>What happens next?</h4>
+        <ol class="stack gap-sm" style="padding-left: 1.1rem; color: var(--ink-soft); font-size: var(--step--1);">
+          <li>Jubilee receives your request.</li>
+          <li>A team member reaches out to confirm availability.</li>
+          <li>Your appointment is scheduled based on mutual availability.</li>
+        </ol>
+        <hr class="rule" style="margin: 1.5rem 0;" />
+        <h4>Prefer to talk first?</h4>
+        <p style="font-size: var(--step--1); color: var(--ink-soft);">You're welcome to reach out directly before booking.</p>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<div id="wa-fab"></div>
+<div id="jg-launcher"></div>
+<div id="jg-panel"></div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/widgets.js"></script>
+<script>
+  Jubilee.init("book-appointment.html");
+
+  const svcSelect = document.getElementById("a-service");
+  SITE_CONFIG.serviceCategories.forEach((s) => {
+    const opt = document.createElement("option");
+    opt.value = s.slug;
+    opt.textContent = s.name;
+    svcSelect.appendChild(opt);
+  });
+  const other = document.createElement("option");
+  other.value = "other";
+  other.textContent = "Other / Not sure";
+  svcSelect.appendChild(other);
+
+  document.getElementById("book-wa-link").href = Jubilee.waLink("Hello Jubilee, I would like to book an appointment.");
+  document.getElementById("book-call-link").href = Jubilee.telLink;
+  document.getElementById("book-email-link").href = Jubilee.mailLink("Appointment Request");
+</script>
+</body>
+</html>

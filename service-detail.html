@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<script>document.documentElement.classList.remove('no-js');</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title id="page-title">Service | Jubilee Prosthetics & Orthotics</title>
+<meta name="description" id="page-desc" content="Learn about this Jubilee service." />
+<link rel="canonical" href="https://www.jubileeprostheticsandorthotics.com/service-detail.html" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.jubileeprostheticsandorthotics.com/service-detail.html" />
+<meta property="og:title" content="Services | Jubilee Prosthetics & Orthotics" />
+<meta property="og:description" content="Learn what a Jubilee service involves, who it may suit, and how to book." />
+<meta property="og:image" content="https://www.jubileeprostheticsandorthotics.com/assets/images/brand/og-share.jpg" />
+<meta property="og:site_name" content="Jubilee Prosthetics &amp; Orthotics" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Services | Jubilee Prosthetics & Orthotics" />
+<meta name="twitter:description" content="Learn what a Jubilee service involves, who it may suit, and how to book." />
+<meta name="twitter:image" content="https://www.jubileeprostheticsandorthotics.com/assets/images/brand/og-share.jpg" />
+<link rel="icon" type="image/svg+xml" href="assets/images/brand/J.svg" />
+<link rel="alternate icon" href="assets/images/brand/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700;800&family=Cascadia+Code:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/tokens.css" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="site-header"></header>
+<div id="mobile-nav" class="mobile-nav"></div>
+
+<main id="main">
+  <section class="hero" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="breadcrumbs"><a href="index.html">Home</a><span class="sep">/</span><a href="services.html">Services</a><span class="sep">/</span><span class="current" id="crumb-name"></span></div>
+      <span class="eyebrow" id="svc-eyebrow">SERVICE</span>
+      <h1 id="svc-name" style="max-width: 20ch;"></h1>
+      <p class="lead" id="svc-short"></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="book-appointment.html">Book an Appointment</a>
+        <a class="btn btn-outline" href="contact.html">Talk to Jubilee</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container">
+      <div class="hero-visual media-wipe reveal" id="svc-hero-visual" style="aspect-ratio: 21/9;"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid grid-3">
+      <div class="value-card"><h4>What it involves</h4><p id="svc-involves"></p></div>
+      <div class="value-card"><h4>Who it may be relevant to</h4><p id="svc-who"></p></div>
+      <div class="value-card"><h4>How Jubilee can help</h4><p id="svc-help"></p></div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div style="margin-bottom:1.5rem;"><span class="eyebrow">RELATED SERVICES</span><h2>You might also explore</h2></div>
+      <div class="grid grid-3 reveal-stagger" id="related-grid"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="margin-bottom:1.5rem;"><span class="eyebrow">HELPFUL RESOURCES</span><h2>Learn more</h2></div>
+      <div class="empty-state">
+        <h4>Service-specific resources are coming soon</h4>
+        <p>Jubilee-approved articles related to this service will appear here. In the meantime, visit the general Resources page.</p>
+        <a class="btn btn-outline btn-sm" href="resources.html" style="margin-top:1rem;">Explore Resources</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container" style="max-width: 780px;">
+      <div style="margin-bottom:1rem;"><span class="eyebrow">FAQ</span><h2>Common questions</h2></div>
+      <div class="faq-list" id="svc-faq"></div>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container">
+      <div class="cta-band reveal">
+        <div><h3>Ready to talk to Jubilee about this service?</h3><p>Book an appointment or reach out directly.</p></div>
+        <div class="actions">
+          <a class="btn btn-gold" href="book-appointment.html">Book an Appointment</a>
+          <a class="btn btn-outline" href="#" id="svc-wa">Talk to Jubilee</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<div id="wa-fab"></div>
+<div id="jg-launcher"></div>
+<div id="jg-panel"></div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/service-content.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/widgets.js"></script>
+<script>
+  Jubilee.init("services.html");
+
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get("service") || SITE_CONFIG.serviceCategories[0].slug;
+  const svc = SITE_CONFIG.serviceCategories.find((s) => s.slug === slug) || SITE_CONFIG.serviceCategories[0];
+  const content = SERVICE_CONTENT[svc.slug] || {};
+
+  document.getElementById("page-title").textContent = `${svc.name} | Jubilee Prosthetics & Orthotics`;
+  document.getElementById("page-desc").setAttribute("content", svc.short);
+  document.getElementById("crumb-name").textContent = svc.name;
+  document.getElementById("svc-name").textContent = svc.name;
+  document.getElementById("svc-short").textContent = svc.short;
+  document.getElementById("svc-hero-visual").innerHTML = Jubilee.mediaBlock({
+    stock: svc.stock,
+    label: `IMAGE SLOT: ${svc.name} Hero`,
+  });
+  document.getElementById("svc-involves").textContent = content.involves || "[CLIENT CONTENT REQUIRED]";
+  document.getElementById("svc-who").textContent = content.who || "[CLIENT CONTENT REQUIRED]";
+  document.getElementById("svc-help").textContent = content.help || "[CLIENT CONTENT REQUIRED]";
+  document.getElementById("svc-wa").href = Jubilee.waLink(`Hello Jubilee, I would like to learn more about ${svc.name}.`);
+
+  const relatedGrid = document.getElementById("related-grid");
+  SITE_CONFIG.serviceCategories.filter((s) => s.slug !== svc.slug).slice(0, 3).forEach((s) => {
+    relatedGrid.insertAdjacentHTML("beforeend", `
+      <div class="card">
+        <div class="card-media">${Jubilee.mediaBlock({ stock: s.stock, label: s.name })}</div>
+        <div class="card-body"><h3>${s.name}</h3><p>${s.short}</p><a class="card-link" href="service-detail.html?service=${s.slug}">Explore Service →</a></div>
+      </div>`);
+  });
+
+  const faqMount = document.getElementById("svc-faq");
+  const genericFaqs = [
+    { q: "Is this service covered by insurance?", a: "Insurance and payment arrangements can vary. Please contact Jubilee directly to discuss what applies to your situation." },
+    { q: "How long does the process usually take?", a: "Timelines depend on your individual assessment and needs. Jubilee's team will give you a clearer estimate once they've had a chance to review your situation." },
+    { q: "Will I need follow-up visits?", a: "Most prosthetic and orthotic care involves some follow-up, whether for adjustments, fit checks, or ongoing support. Jubilee will let you know what to expect for your specific plan." },
+  ];
+  genericFaqs.forEach((item, i) => {
+    faqMount.insertAdjacentHTML("beforeend", `
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="svc-faq-${i}">${item.q}</button>
+        <div class="faq-answer" id="svc-faq-${i}"><div class="faq-answer__inner">${item.a}</div></div>
+      </div>`);
+  });
+</script>
+</body>
+</html>
