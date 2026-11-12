@@ -23,9 +23,9 @@ const SITE_CONFIG = {
   whatsappIntl: "2349122556371", // normalized for wa.me links (NG country code assumed from local format)
   email: "jubileeprostheticsandorthotics@gmail.com",
   address: {
-    line1: "79c Afoko Road",
+    line1: "79c Afikpo Road",
     line2: "Abakaliki, Ebonyi State, Nigeria",
-    full: "79c Afoko Road, Abakaliki, Ebonyi State, Nigeria",
+    full: "79c Afikpo Road, Abakaliki, Ebonyi State, Nigeria",
   },
 
   // ---- Status: map is resolved (client-supplied link); hours still pending
