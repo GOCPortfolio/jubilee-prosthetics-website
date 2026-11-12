@@ -70,7 +70,7 @@
     <div class="container">
       <div style="margin-bottom:1.5rem;"><span class="eyebrow">HELPFUL RESOURCES</span><h2>Learn more</h2></div>
       <div class="empty-state">
-        <h4>Service-specific resources are coming soon</h4>
+        <h4>Helpful guides and articles</h4>
         <p>Jubilee-approved articles related to this service will appear here. In the meantime, visit the general Resources page.</p>
         <a class="btn btn-outline btn-sm" href="resources.html" style="margin-top:1rem;">Explore Resources</a>
       </div>
@@ -123,9 +123,9 @@
     stock: svc.stock,
     label: `IMAGE SLOT: ${svc.name} Hero`,
   });
-  document.getElementById("svc-involves").textContent = content.involves || "[CLIENT CONTENT REQUIRED]";
-  document.getElementById("svc-who").textContent = content.who || "[CLIENT CONTENT REQUIRED]";
-  document.getElementById("svc-help").textContent = content.help || "[CLIENT CONTENT REQUIRED]";
+  document.getElementById("svc-involves").textContent = content.involves || "Contact Jubilee to learn what this service involves.";
+  document.getElementById("svc-who").textContent = content.who || "Contact Jubilee to find out whether this service suits you.";
+  document.getElementById("svc-help").textContent = content.help || "Jubilee's team will guide you from assessment to follow-up.";
   document.getElementById("svc-wa").href = Jubilee.waLink(`Hello Jubilee, I would like to learn more about ${svc.name}.`);
 
   const relatedGrid = document.getElementById("related-grid");

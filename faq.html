@@ -37,7 +37,7 @@
       <div class="breadcrumbs"><a href="index.html">Home</a><span class="sep">/</span><span class="current">FAQ</span></div>
       <span class="eyebrow">FREQUENTLY ASKED QUESTIONS</span>
       <h1 style="max-width: 18ch;">Answers to common questions.</h1>
-      <p class="lead">Search or browse by category. Some answers are still being finalized with Jubilee's clinical team.</p>
+      <p class="lead">Search or browse by category.</p>
     </div>
   </section>
 
@@ -95,18 +95,18 @@
     { q: "Does Jubilee accept walk-ins?", a: "Booking ahead through the appointment form, phone or WhatsApp helps Jubilee's team prepare for your visit and reduces waiting time. Contact Jubilee directly to ask about same-day availability.", cat: "Appointments" },
     { q: "What is a prosthetic limb?", a: "A prosthetic limb is a custom-fit device that replaces a missing limb, designed around your body and mobility goals.", cat: "Prosthetics" },
     { q: "How long does it take to get fitted for a prosthetic?", a: "Timelines vary depending on the individual and the type of device involved. Jubilee's team will give you a clearer estimate once your assessment is complete.", cat: "Prosthetics" },
-    { q: "What is an orthotic device?", a: "An orthotic device supports alignment, stability and movement — commonly a brace or splint fitted to your specific needs.", cat: "Orthotics" },
-    { q: "Can children use orthotic devices?", a: "Yes — Jubilee offers pediatric orthotic and prosthetic care adapted for growing children.", cat: "Orthotics" },
-    { q: "My device is damaged — can Jubilee repair it?", a: "Jubilee offers repair services for prosthetic and orthotic devices. Bring your device in for an assessment.", cat: "Repairs" },
+    { q: "What is an orthotic device?", a: "An orthotic device supports alignment, stability and movement, commonly a brace or splint fitted to your specific needs.", cat: "Orthotics" },
+    { q: "Can children use orthotic devices?", a: "Yes. Jubilee offers pediatric orthotic and prosthetic care adapted for growing children.", cat: "Orthotics" },
+    { q: "My device is damaged, can Jubilee repair it?", a: "Jubilee offers repair services for prosthetic and orthotic devices. Bring your device in for an assessment.", cat: "Repairs" },
     { q: "How often should a prosthetic or orthotic be serviced?", a: "This depends on how the device is used day to day and how it's holding up. If you notice discomfort, unusual noises, or visible wear, it's worth having Jubilee take a look sooner rather than later.", cat: "Repairs" },
     { q: "What does gait rehabilitation involve?", a: "Gait rehabilitation involves assessing how you walk and move, then supporting improvements in balance and mobility.", cat: "Rehabilitation" },
     { q: "Is rehabilitation covered under a single visit?", a: "Rehabilitation support is usually an ongoing process rather than a single visit. Jubilee's team will discuss a plan and pace that suits your situation after an initial assessment.", cat: "Rehabilitation" },
     { q: "Where is Jubilee located?", a: "Jubilee is located at 79c Afoko Road, Abakaliki, Ebonyi State, Nigeria.", cat: "General" },
-    { q: "Does Jubilee work with international patients?", a: "Jubilee welcomes enquiries from international patients — contact Jubilee to discuss your situation.", cat: "General" },
+    { q: "Does Jubilee work with international patients?", a: "Jubilee welcomes enquiries from international patients, contact Jubilee to discuss your situation.", cat: "General" },
     { q: "Does Jubilee accept insurance?", a: "Insurance and payment arrangements can vary. Please contact Jubilee directly to discuss what applies to your situation.", cat: "General" },
   ];
 
-  // FAQPage structured data — generated from the same array that renders the
+  // FAQPage structured data, generated from the same array that renders the
   // accordion, so the markup and the schema can never drift apart.
   const faqSchema = {
     "@context": "https://schema.org",
@@ -124,7 +124,7 @@
 
   const mount = document.getElementById("faq-list");
   FAQS.forEach((item, i) => {
-    const answer = item.a || `<span class="faq-placeholder">[FAQ CONTENT REQUIRED]</span> — Jubilee will provide an approved answer to this question.`;
+    const answer = item.a || "Please contact Jubilee directly and the team will be glad to answer this.";
     mount.insertAdjacentHTML("beforeend", `
       <div class="faq-item" data-category="${item.cat}">
         <button class="faq-question" aria-expanded="false" aria-controls="faq-panel-${i}">${item.q}</button>

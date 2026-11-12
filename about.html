@@ -5,7 +5,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>About Jubilee | Jubilee Prosthetics & Orthotics</title>
-<meta name="description" content="Learn about Jubilee Prosthetics & Orthotics — our mission, vision, values, and the clinical team behind our patient-centered care." />
+<meta name="description" content="Learn about Jubilee Prosthetics & Orthotics, our mission, vision, values, and the clinical team behind our patient-centered care." />
 <link rel="canonical" href="about.html" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="About Jubilee Prosthetics & Orthotics" />
@@ -67,11 +67,11 @@
       <div>
         <span class="eyebrow">OUR STORY</span>
         <h2>Turning challenges into triumph.</h2>
-        <p class="lead">Jubilee's name reflects its purpose: a moment of celebration for every person who moves toward greater independence. The brand identity brings together a stylized "J," a cross, and the image of a champion — representing greatness, independence, ability and championship.</p>
+        <p class="lead">Jubilee's name reflects its purpose: a moment of celebration for every person who moves toward greater independence. The brand identity brings together a stylized "J," a cross, and the image of a champion, representing greatness, independence, ability and championship.</p>
         <p>Jubilee exists to help people move toward greater mobility, independence and quality of life through professional prosthetic and orthotic services.</p>
       </div>
       <!-- IMAGE SLOT: Jubilee Logo Mark
-           REPLACE WHEN: the official Jubilee logo file is supplied — swap the
+           REPLACE WHEN: the official Jubilee logo file is supplied, swap the
            <img> src below for assets/images/brand/logo-mark.svg
            NOTE: the mark shown is the interim placeholder, not Jubilee's real logo. -->
       <div class="hero-visual media-wipe reveal" style="aspect-ratio:1/1;">
@@ -96,7 +96,7 @@
              REPLACE WHEN: rename your photo to exactly
                practitioner-primary.jpg
              and drop it into: assets/images/team/
-             Nothing else needs to change — until that file exists, this
+             Nothing else needs to change, until that file exists, this
              shows a designed placeholder with the practitioner's name and
              title (never a stock stranger's face under a real name).
              ============================================================ -->
@@ -107,7 +107,8 @@
           <hr class="rule" style="margin: 1.25rem 0;" />
           <p><strong>Qualification:</strong> <span id="prac-qual"></span></p>
           <p><strong>Experience:</strong> <span id="prac-exp"></span></p>
-          <p style="font-size:0.8rem; color:var(--gray-600); margin-top:1.5rem;">Biography details beyond the information above are [CLIENT CONTENT REQUIRED].</p>
+          <hr class="rule" style="margin: 1.25rem 0;" />
+          <div class="bio" id="prac-bio"></div>
         </div>
       </div>
     </div>
@@ -155,6 +156,7 @@
   document.getElementById("prac-title").textContent = SITE_CONFIG.practitioner.title;
   document.getElementById("prac-qual").textContent = SITE_CONFIG.practitioner.qualification;
   document.getElementById("prac-exp").textContent = SITE_CONFIG.practitioner.experience;
+  document.getElementById("prac-bio").innerHTML = SITE_CONFIG.practitioner.bio.map((t) => `<p>${t}</p>`).join("");
 </script>
 </body>
 </html>

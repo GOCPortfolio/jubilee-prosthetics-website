@@ -22,7 +22,7 @@
       });
     });
 
-    // FAQ search + category filter — combined so both work together
+    // FAQ search + category filter, combined so both work together
     const search = document.getElementById("faq-search");
     const pills = document.querySelectorAll("[data-faq-filter]");
     const noResults = document.getElementById("faq-no-results");
@@ -129,40 +129,44 @@
     search?.addEventListener("input", applyFilters);
   }
 
-  // ---------------- Generic form handler ----------------
-  // INTEGRATION POINT: replace the simulated submit with a real POST to
-  // Jubilee's backend / form provider. No API keys belong in this file.
+  // ---------------- Form handler ----------------
+  // Contact + appointment forms open WhatsApp with the details already written
+  // out, so the message reaches Jubilee directly. (Swap for a database insert
+  // once Supabase is connected.) The newsletter form is still a placeholder.
   function initForms() {
     document.querySelectorAll("form[data-jubilee-form]").forEach((form) => {
       const status = form.querySelector(".form-status");
-      const submitBtn = form.querySelector('[type="submit"]');
+      const formType = form.getAttribute("data-jubilee-form");
+      const val = (n) => {
+        const el = form.elements[n];
+        if (!el) return "";
+        return el.tagName === "SELECT" ? (el.selectedOptions[0]?.textContent || "").trim() : (el.value || "").trim();
+      };
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
-        if (!form.checkValidity()) {
-          form.reportValidity();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+
+        if (formType === "newsletter") {
+          status.className = "form-status form-status--success is-visible";
+          status.textContent = "Thank you. You're on the list.";
+          form.reset();
           return;
         }
 
-        status.className = "form-status form-status--loading is-visible";
-        status.textContent = "Sending your request…";
-        submitBtn.disabled = true;
+        const rows = formType === "appointment"
+          ? [["Name", val("name")], ["Phone", val("phone")], ["WhatsApp", val("whatsapp")], ["Email", val("email")],
+             ["Preferred contact", val("contactMethod")], ["Service", val("service")], ["Preferred date", val("date")],
+             ["Preferred time", val("time")], ["Message", val("message")]]
+          : [["Name", val("name")], ["Email", val("email")], ["Phone", val("phone")], ["Subject", val("subject")], ["Message", val("message")]];
+        const intro = formType === "appointment" ? "Hello Jubilee, I would like to request an appointment." : "Hello Jubilee, I have an enquiry.";
+        const msg = intro + "\n\n" + rows.filter(([, v]) => v).map(([k, v]) => `${k}: ${v}`).join("\n");
+        const url = Jubilee.waLink(msg);
 
-        // Simulated network delay — swap for a real fetch() to your backend.
-        setTimeout(() => {
-          const formType = form.getAttribute("data-jubilee-form");
-          submitBtn.disabled = false;
-
-          // Simulated success path (real integration required for production).
-          status.className = "form-status form-status--success is-visible";
-          status.textContent =
-            formType === "appointment"
-              ? "Thank you. Your appointment request has been received. Jubilee will contact you to confirm availability."
-              : formType === "newsletter"
-              ? "You're subscribed. Thank you for staying connected with Jubilee."
-              : "Thank you. Your message has been received. Jubilee will respond as soon as possible.";
-          form.reset();
-        }, 900);
+        const win = window.open(url, "_blank");
+        if (win) win.opener = null;
+        status.className = "form-status form-status--success is-visible";
+        status.innerHTML = `WhatsApp is opening with your details ready. Press send there to reach Jubilee. <a href="${url}" target="_blank" rel="noopener">Tap here if it didn't open.</a>`;
       });
     });
   }

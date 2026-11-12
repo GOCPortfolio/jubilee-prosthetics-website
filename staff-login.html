@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<script>document.documentElement.classList.remove('no-js');</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Staff Login | Jubilee Prosthetics & Orthotics</title>
+<meta name="description" content="Sign-in for Jubilee staff and administrators." />
+<meta name="robots" content="noindex, nofollow" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.jubileeprostheticsandorthotics.com/accessibility.html" />
+<meta property="og:title" content="Accessibility | Jubilee Prosthetics & Orthotics" />
+<meta property="og:description" content="Jubilee's commitment to a website usable by everyone." />
+<meta property="og:image" content="https://www.jubileeprostheticsandorthotics.com/assets/images/brand/og-share.jpg" />
+<meta property="og:site_name" content="Jubilee Prosthetics &amp; Orthotics" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Accessibility | Jubilee Prosthetics & Orthotics" />
+<meta name="twitter:description" content="Jubilee's commitment to a website usable by everyone." />
+<meta name="twitter:image" content="https://www.jubileeprostheticsandorthotics.com/assets/images/brand/og-share.jpg" />
+<link rel="icon" type="image/svg+xml" href="assets/images/brand/J.svg" />
+<link rel="alternate icon" href="assets/images/brand/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700;800&family=Cascadia+Code:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/tokens.css" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="site-header"></header>
+<div id="mobile-nav" class="mobile-nav"></div>
+<main id="main">
+  <section class="hero" style="padding-bottom:1.5rem;">
+    <div class="container">
+      <div class="breadcrumbs"><a href="index.html">Home</a><span class="sep">/</span><span class="current">Staff Login</span></div>
+      <span class="eyebrow">STAFF &amp; ADMINISTRATORS</span>
+      <h1 style="max-width:16ch;">Sign in to Jubilee CRM.</h1>
+      <p class="lead">For Jubilee team members only. Manage patient enquiries, appointment requests and follow-ups in one place.</p>
+    </div>
+  </section>
+  <section class="section--tight">
+    <div class="container split split--60-40">
+      <form id="staff-login" novalidate style="max-width:520px;">
+        <div class="field"><label for="sl-email">Work email</label><input type="email" id="sl-email" name="email" required autocomplete="username" /></div>
+        <div class="field" style="margin-top:1.25rem;"><label for="sl-pass">Password</label><input type="password" id="sl-pass" name="password" required autocomplete="current-password" /></div>
+        <button type="submit" class="btn btn-primary" style="margin-top:1.5rem;">Sign in</button>
+        <div class="form-status" role="status" id="sl-status"></div>
+      </form>
+      <aside class="card" style="padding:1.75rem; border:none; box-shadow: var(--shadow-soft); align-self:start;">
+        <h4>Setup in progress</h4>
+        <p style="font-size: var(--step--1); color: var(--ink-soft);">Secure sign-in is being connected. Until then, you can look around the dashboard using sample data only.</p>
+        <a class="btn btn-outline" href="crm.html" style="width:100%;">Preview the CRM (sample data)</a>
+      </aside>
+    </div>
+  </section>
+</main>
+<footer class="site-footer" id="site-footer"></footer>
+<div id="wa-fab"></div>
+<div id="jg-launcher"></div>
+<div id="jg-panel"></div>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/components.js"></script>
+<script>
+  Jubilee.init("");
+  // SUPABASE (to do): replace this handler with
+  //   const { error } = await supabase.auth.signInWithPassword({ email, password });
+  // then redirect to crm.html on success. SITE_CONFIG.supabase holds the project URL + anon key.
+  document.getElementById("staff-login").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const s = document.getElementById("sl-status");
+    s.className = "form-status";
+    s.textContent = "Sign-in isn\u2019t connected yet. Please use the sample preview for now.";
+  });
+</script>
+</body>
+</html>

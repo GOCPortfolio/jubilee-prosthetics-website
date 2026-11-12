@@ -44,11 +44,10 @@
   <section class="section">
     <div class="container">
       <div style="margin-bottom:2rem;">
-        <span class="eyebrow">SAMPLE LAYOUT</span>
-        <h2>This is how patient stories will look.</h2>
-        <p class="lead">The cards below show the design Jubilee's real, consented stories will use — they are not real testimonials. <span class="faq-placeholder">[PATIENT TESTIMONIAL REQUIRED]</span></p>
+        <span class="eyebrow">IN THEIR OWN WORDS</span>
+        <h2>Messages from people Jubilee has served.</h2>
       </div>
-      <div class="grid grid-3 reveal-stagger" id="story-grid"></div>
+      <div class="grid grid-2 story-grid reveal-stagger" id="story-grid"></div>
       <div class="center" style="margin-top:2rem;">
         <a class="btn btn-outline btn-sm" href="contact.html">Share Your Story</a>
       </div>
@@ -60,7 +59,7 @@
       <div style="margin-bottom:1.5rem;">
         <span class="eyebrow">TRANSFORMATIONS</span>
         <h2>Before &amp; after, with consent.</h2>
-        <p class="lead">Drag the handle (or use your arrow keys) to compare. The images below are a working demonstration of the comparison tool — real, consented patient media will replace them. <span class="faq-placeholder">[PATIENT PHOTO — WITH CONSENT]</span></p>
+        <p class="lead">Drag the handle, or use your arrow keys, to compare. Shared with the patient's consent. Results vary by individual case.</p>
       </div>
 
       <!-- ============================================================
@@ -74,13 +73,13 @@
             <div class="ba-slider reveal" id="demo-ba">
                 <div class="ba-slider__before">
                   <img src="assets/images/before-after/case-01-before.jpg"
-                      alt="[WRITE FINAL DESCRIPTIVE ALT TEXT — before]"
+                      alt="A Jubilee clinician fitting a prosthetic leg on a patient during a clinic visit"
                       loading="lazy"
                       onerror="console.warn('[Jubilee] IMAGE FAILED:', this.getAttribute('src'));" />
                 </div>
                 <div class="ba-slider__after">
                   <img src="assets/images/before-after/case-01-after.jpg"
-                      alt="[WRITE FINAL DESCRIPTIVE ALT TEXT — after]"
+                      alt="A young cyclist riding a bicycle outdoors with a prosthetic leg"
                       loading="lazy"
                       onerror="console.warn('[Jubilee] IMAGE FAILED:', this.getAttribute('src'));" />
         </div>
@@ -121,48 +120,7 @@
 <script>
   Jubilee.init("patient-stories.html");
 
-      const storyGrid = document.getElementById("story-grid");
-  // EXAMPLE CONTENT — for client reference only. Replace name/quote/service
-  // with real, consented patient stories before publishing.
-  const sampleStories = [
-    {
-      photo: "assets/images/patient-stories/story-01.jpg",
-      alt: "David, smiling while walking outdoors with his prosthetic leg",
-      name: "David O.",
-      service: "Prosthetic Services",
-      quote: "I got my life back. Within a few months I was back to walking my daughter to school every morning — something I didn't think I'd do again.",
-    },
-    {
-      photo: "assets/images/patient-stories/story-02.jpg",
-      alt: "Amaka standing confidently in her orthotic brace at home",
-      name: "Amaka N.",
-      service: "Orthotic Services",
-      quote: "The team took the time to get the fit exactly right. I went from constant pain to being able to stand through a full workday.",
-    },
-    {
-      photo: "assets/images/patient-stories/story-03.jpg",
-      alt: "Tomiwa's mother helping him take his first steps with his new prosthetic leg",
-      name: "Tomiwa's mother, Funke A.",
-      service: "Pediatric Prosthetics & Orthotics",
-      quote: "Watching my son take his first steps with his new leg, surrounded by a team that treated him like family — I'll never forget that day.",
-    },
-  ];
-  sampleStories.forEach((s) => {
-    storyGrid.insertAdjacentHTML("beforeend", `
-      <div class="story-card">
-        <div class="story-card__media">
-          <div class="img-real">
-            <img src="${s.photo}" alt="${s.alt}" loading="lazy"
-                 onerror="console.warn('[Jubilee] IMAGE FAILED:', this.getAttribute('src')); this.closest('.img-real').outerHTML='<div class=&quot;img-slot&quot;><div class=&quot;img-slot__inner&quot;><div class=&quot;img-slot__label&quot;>IMAGE SLOT: Patient Story Photo</div><span class=&quot;img-slot__path&quot;>${s.photo}</span></div></div>';" />
-          </div>
-        </div>
-        <div class="story-card__body">
-          <p class="story-card__quote">"${s.quote}"</p>
-          <div class="story-card__meta"><span>${s.name}</span><span>&middot;</span><span>${s.service}</span></div>
-          <span class="story-card__consent">Shared with patient consent</span>
-        </div>
-      </div>`);
-  });
+  Jubilee.renderStories(document.getElementById("story-grid"), SITE_CONFIG.stories);
 </script>
 </body>
 </html>

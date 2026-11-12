@@ -109,13 +109,22 @@
         `<a href="${cfg.social.facebook}" aria-label="Jubilee on Facebook" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6C16.4 3.55 15.4 3.5 14.2 3.5c-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3.1h2.7v8h3.5z"/></svg></a>`
       );
     }
-    // Instagram / LinkedIn / TikTok / X / YouTube intentionally omitted —
-    // no confirmed URLs supplied in the client source (brief §36).
+    const socialDefs = {
+      instagram: ["Instagram", `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>`],
+      linkedin: ["LinkedIn", `<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9.75h4V21H3V9.75zm6.5 0h3.8v1.6h.06c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.77 2.55 4.77 5.87V21h-4v-5.1c0-1.2-.02-2.78-1.8-2.78-1.8 0-2.07 1.35-2.07 2.7V21h-4V9.75z"/></svg>`],
+      tiktok: ["TikTok", `<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.3 2.4 1.7 4 4 4.2v3.1c-1.5 0-2.9-.5-4-1.2v6.2c0 3.2-2.6 5.7-5.8 5.7S5 18.5 5 15.3s2.6-5.7 5.8-5.7c.3 0 .6 0 .9.1v3.2a2.6 2.6 0 00-.9-.2 2.6 2.6 0 100 5.2c1.5 0 2.7-1.1 2.7-2.9V3h3.1z"/></svg>`],
+    };
+    Object.entries(socialDefs).forEach(([key, [label, icon]]) => {
+      if (cfg.social[key]) {
+        socialIcons.push(`<a href="${cfg.social[key]}" aria-label="Jubilee on ${label}" target="_blank" rel="noopener">${icon}</a>`);
+      }
+    });
+    // X / YouTube stay omitted until real URLs are supplied.
 
     mount.innerHTML = `
       <div class="container footer-top">
         <div class="footer-brand">
-          <a href="index.html" class="brand-mark">${jMark}<span>Jubilee</span></a>
+          <a href="index.html" aria-label="Jubilee Prosthetics &amp; Orthotics, home"><img class="footer-logo" src="assets/images/brand/logo-white.png" alt="Jubilee Prosthetics &amp; Orthotics" /></a>
           <p>Prosthetic and orthotic services designed around mobility, independence and quality of life.</p>
           <div class="footer-social">${socialIcons.join("")}</div>
         </div>
@@ -142,6 +151,7 @@
           <a href="privacy-policy.html">Privacy Policy</a>
           <a href="terms.html">Terms</a>
           <a href="accessibility.html">Accessibility</a>
+          <a href="staff-login.html">Staff Login</a>
         </nav>
       </div>`;
   }
@@ -160,7 +170,7 @@
   }
 
   // ---------------------------------------------------------------------
-  // JUBILEE GUIDE (AI patient-support assistant — front-end UI)
+  // JUBILEE GUIDE (AI patient-support assistant, front-end UI)
   // ---------------------------------------------------------------------
   const GUIDE_SAFE_FALLBACK =
     "The Jubilee Guide can provide general information from Jubilee's approved resources, but it cannot diagnose or recommend treatment. Please contact Jubilee or a qualified healthcare professional for personal medical advice.";
@@ -171,7 +181,7 @@
     {
       test: /appointment|book/i,
       reply:
-        "You can request an appointment through the Book an Appointment page — share your details and preferred time, and Jubilee will contact you to confirm availability.",
+        "You can request an appointment through the Book an Appointment page, share your details and preferred time, and Jubilee will contact you to confirm availability.",
       cta: "book",
     },
     {
@@ -216,7 +226,7 @@
     {
       test: /pain|emergency|urgent|bleeding|infection|hurt/i,
       reply:
-        "This sounds like it may need urgent attention. The Jubilee Guide can't assess medical symptoms — please contact Jubilee directly or seek professional/emergency care right away.",
+        "This sounds like it may need urgent attention. The Jubilee Guide can't assess medical symptoms, please contact Jubilee directly or seek professional/emergency care right away.",
       cta: "whatsapp",
     },
     {
@@ -355,8 +365,8 @@
   }
 
   // ---------------------------------------------------------------------
-  // SCROLL REVEAL — single elements (.reveal), staggered groups
-  // (.reveal-stagger — CSS handles the per-child nth-child delay once the
+  // SCROLL REVEAL, single elements (.reveal), staggered groups
+  // (.reveal-stagger. CSS handles the per-child nth-child delay once the
   // group gets .is-visible), and editorial image wipes (.media-wipe).
   // ---------------------------------------------------------------------
   function initReveal() {
@@ -384,7 +394,7 @@
   }
 
   // ---------------------------------------------------------------------
-  // PAGE TRANSITIONS — soft fade on load, and a brief fade-out before
+  // PAGE TRANSITIONS, soft fade on load, and a brief fade-out before
   // navigating to another page on this site (skips new tabs, anchors,
   // tel/mailto links, and external sites). Off entirely under reduced
   // motion, where content should simply appear.
@@ -412,7 +422,7 @@
   }
 
   // ---------------------------------------------------------------------
-  // MEDIA BLOCK — renders a real (swappable) stock photo with a small
+  // MEDIA BLOCK, renders a real (swappable) stock photo with a small
   // "replace me" badge, or falls back to the dashed placeholder if no
   // stock image is supplied. Keeps every image slot easy to find and swap.
   // ---------------------------------------------------------------------
@@ -428,7 +438,7 @@
     if (stock && stock.src) {
       // Local file expected at stock.src. Until it exists, the browser's
       // onerror fires and swaps in the labelled placeholder showing exactly
-      // which path to drop the file into — no badge needed once it's real.
+      // which path to drop the file into, no badge needed once it's real.
       const fallback = placeholder.replace(/\s+/g, " ").replace(/"/g, "&quot;");
       return `
         <div class="img-real">
@@ -440,7 +450,7 @@
   }
 
   // ---------------------------------------------------------------------
-  // PORTRAIT BLOCK — same rename-and-drop workflow as mediaBlock, but for a
+  // PORTRAIT BLOCK, same rename-and-drop workflow as mediaBlock, but for a
   // real, named person. If the file at `src` doesn't exist yet, falls back
   // to a designed branded panel (initials + name + title) instead of a
   // stock stranger's face, which would misrepresent someone by name.
@@ -463,7 +473,7 @@
   }
 
   // ---------------------------------------------------------------------
-  // SCROLL PROGRESS BAR — thin gold→green line tracking read position
+  // SCROLL PROGRESS BAR, thin gold→green line tracking read position
   // ---------------------------------------------------------------------
   function initScrollProgress() {
     const bar = document.createElement("div");
@@ -482,12 +492,12 @@
   }
 
   // ---------------------------------------------------------------------
-  // PARALLAX — subtle depth on large editorial images (skipped entirely
+  // PARALLAX, subtle depth on large editorial images (skipped entirely
   // when the visitor prefers reduced motion)
   // ---------------------------------------------------------------------
   function initParallax() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    // Only the primary hero image — secondary editorial photos use the
+    // Only the primary hero image, secondary editorial photos use the
     // clip-path wipe reveal instead, so the two effects never fight over
     // the same `transform` property.
     const els = document.querySelectorAll(".hero-visual--intro");
@@ -510,8 +520,28 @@
   // ---------------------------------------------------------------------
   // Expose helpers for page-specific scripts
   // ---------------------------------------------------------------------
+  // Patient testimonial cards, one renderer shared by Home + Patient Stories.
+  function renderStories(mount, stories) {
+    if (!mount) return;
+    const esc = (t) => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    mount.innerHTML = stories.map((s) => `
+      <figure class="story-card story-card--tall">
+        <div class="story-card__media">
+          <div class="img-real">
+            <img src="${esc(s.photo)}" alt="${esc(s.alt)}" loading="lazy" style="object-position:${esc(s.position || "50% 50%")};" />
+          </div>
+        </div>
+        <figcaption class="story-card__body">
+          <blockquote class="story-card__quote">${s.quote.map((q, i) => `<p>${i === 0 ? "\u201C" : ""}${esc(q)}${i === s.quote.length - 1 ? "\u201D" : ""}</p>`).join("")}</blockquote>
+          <div class="story-card__meta"><span>${esc(s.name)}</span><span>&middot;</span><span>${esc(s.service)}</span></div>
+          <span class="story-card__consent">Shared with patient consent</span>
+        </figcaption>
+      </figure>`).join("");
+  }
+
   window.Jubilee = {
     cfg,
+    renderStories,
     waLink,
     telLink,
     mailLink,

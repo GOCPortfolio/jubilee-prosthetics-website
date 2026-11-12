@@ -2,7 +2,7 @@
  * SERVICE_CONTENT
  * Extended, general-purpose descriptions for each service category.
  * Kept intentionally non-clinical and free of specific claims, statistics
- * or guarantees — final clinical copy is [CLIENT CONTENT REQUIRED].
+ * or guarantees, final clinical copy is [CLIENT CONTENT REQUIRED].
  */
 const SERVICE_CONTENT = {
   "prosthetic-services": {
@@ -11,7 +11,7 @@ const SERVICE_CONTENT = {
     help: "Jubilee's team works with you through assessment, fitting and follow-up, adjusting the plan as your needs change.",
   },
   "orthotic-services": {
-    involves: "Orthotic services provide supportive devices — braces, splints, or other orthoses — that help with alignment, stability, and safer movement.",
+    involves: "Orthotic services provide supportive devices, braces, splints, or other orthoses, that help with alignment, stability, and safer movement.",
     who: "People managing musculoskeletal conditions, alignment concerns, or those recovering from injury.",
     help: "Jubilee assesses your specific situation and discusses orthotic options suited to your daily life.",
   },

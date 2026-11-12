@@ -5,7 +5,7 @@
  * collection described in the README, so swapping this array for a CMS
  * fetch() later requires no template changes.
  *
- * CONTENT STATUS: DESIGN PLACEHOLDER — general, non-clinical orientation
+ * CONTENT STATUS: DESIGN PLACEHOLDER, general, non-clinical orientation
  * copy written so the Resources area is demonstrable. Every article below
  * must be reviewed and approved by Jubilee before publication, and no
  * clinical instruction, dosage, timeline or outcome is asserted anywhere.
@@ -17,7 +17,7 @@ const RESOURCES_CONTENT = [
     title: "Preparing for your first appointment",
     category: "Appointments",
     excerpt:
-      "A short checklist to help your first visit to Jubilee go smoothly — what to bring, what to wear, and what to expect.",
+      "A short checklist to help your first visit to Jubilee go smoothly, what to bring, what to wear, and what to expect.",
     author: "Jubilee Prosthetics & Orthotics",
     date: "2026-01-15",
     readingTime: "3 min read",
@@ -27,10 +27,10 @@ const RESOURCES_CONTENT = [
     seoDescription:
       "What to bring, what to wear and what to expect at your first prosthetics or orthotics appointment with Jubilee.",
     body: [
-      { h: "Before you come", p: "Gather anything that helps Jubilee's team understand your situation: referral letters, previous medical records relating to your mobility, and a list of any medications you take. If you already use a prosthetic or orthotic device, bring it with you — even if it is damaged or no longer fits well." },
+      { h: "Before you come", p: "Gather anything that helps Jubilee's team understand your situation: referral letters, previous medical records relating to your mobility, and a list of any medications you take. If you already use a prosthetic or orthotic device, bring it with you, even if it is damaged or no longer fits well." },
       { h: "What to wear", p: "Comfortable, loose clothing makes assessment easier, particularly anything that allows easy access to the area being looked at. Many people find shorts or loose trousers helpful for lower-limb appointments." },
       { h: "Bring someone if it helps", p: "You are welcome to bring a family member, caregiver or friend. A second set of ears can be useful, especially at a first visit when there is a lot to take in." },
-      { h: "Questions are welcome", p: "Write down anything you want to ask before you arrive — it is easy to forget in the moment. No question is too small, and Jubilee's team would rather you ask than leave uncertain." },
+      { h: "Questions are welcome", p: "Write down anything you want to ask before you arrive, it is easy to forget in the moment. No question is too small, and Jubilee's team would rather you ask than leave uncertain." },
       { h: "What happens on the day", p: "Your visit will generally involve a conversation about your goals and daily life, followed by an assessment. What comes next depends entirely on your individual situation, and Jubilee's clinical team will discuss that with you directly." },
     ],
   },
@@ -69,10 +69,10 @@ const RESOURCES_CONTENT = [
     featured: false,
     seoTitle: "Understanding Orthotic Devices | Jubilee",
     seoDescription:
-      "A plain-language introduction to orthotic devices — what they are, the forms they take, and how they support movement.",
+      "A plain-language introduction to orthotic devices, what they are, the forms they take, and how they support movement.",
     body: [
       { h: "What an orthosis is", p: "An orthosis is an external device fitted to part of the body to support alignment, stability or movement. Braces and splints are the most familiar examples, but the category is broad." },
-      { h: "Why they are custom-fitted", p: "An orthosis works by applying support in specific places. Because no two bodies are the same, fit matters enormously — a device that is not properly matched to the person wearing it will not do its job comfortably." },
+      { h: "Why they are custom-fitted", p: "An orthosis works by applying support in specific places. Because no two bodies are the same, fit matters enormously, a device that is not properly matched to the person wearing it will not do its job comfortably." },
       { h: "Common questions people have", p: "People often ask how visible a device will be, whether it will fit under clothing, and how it will affect daily routines. These are reasonable questions and are best answered in relation to your specific situation during an assessment." },
       { h: "Living with a device", p: "Adjusting to an orthosis takes time, and it is normal for the first period to feel unfamiliar. Staying in contact with Jubilee during that time means adjustments can be made as needed." },
     ],
@@ -93,9 +93,9 @@ const RESOURCES_CONTENT = [
       "Guidance for parents and caregivers supporting a child through pediatric prosthetic or orthotic care at Jubilee.",
     body: [
       { h: "Children grow, and devices need to keep up", p: "The single biggest difference in pediatric care is growth. Devices that fit well will need revisiting more often than they would for an adult, and regular check-ins are part of the process rather than a sign something has gone wrong." },
-      { h: "Let the child be part of the conversation", p: "Where age allows, involving a child in decisions about their own device — colour, how it feels, what bothers them — tends to make them far more willing to wear it consistently." },
+      { h: "Let the child be part of the conversation", p: "Where age allows, involving a child in decisions about their own device, colour, how it feels, what bothers them, tends to make them far more willing to wear it consistently." },
       { h: "Watch for what they may not say", p: "Younger children often will not articulate discomfort directly. Changes in how they move, reluctance to wear the device, or new marks on the skin are worth paying attention to." },
-      { h: "Ask for support", p: "Caring for a child through this process can be demanding. Jubilee's team is there for the practical questions as well as the clinical ones — please ask." },
+      { h: "Ask for support", p: "Caring for a child through this process can be demanding. Jubilee's team is there for the practical questions as well as the clinical ones, please ask." },
     ],
   },
   {
@@ -114,7 +114,7 @@ const RESOURCES_CONTENT = [
       "An overview of what happens during a gait assessment at Jubilee and why movement patterns matter.",
     body: [
       { h: "Why walking is worth studying", p: "How a person walks reveals a great deal about balance, alignment and where the body may be compensating. Small patterns that are easy to miss day to day can be significant when observed carefully." },
-      { h: "What the assessment involves", p: "In general terms, a gait assessment involves observing you walking and moving, and discussing what you notice yourself — where you feel unsteady, what tires you, and what you would like to be able to do more easily." },
+      { h: "What the assessment involves", p: "In general terms, a gait assessment involves observing you walking and moving, and discussing what you notice yourself, where you feel unsteady, what tires you, and what you would like to be able to do more easily." },
       { h: "It is a conversation, not a test", p: "There is no passing or failing. The purpose is to understand your movement so that any support offered actually fits how you live." },
       { h: "What comes next", p: "Findings are discussed with you directly, and any recommended next steps will depend on your individual circumstances." },
     ],

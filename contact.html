@@ -37,7 +37,7 @@
       <div class="breadcrumbs"><a href="index.html">Home</a><span class="sep">/</span><span class="current">Contact</span></div>
       <span class="eyebrow">CONTACT &amp; LOCATION</span>
       <h1 style="max-width: 18ch;">Let's talk about your next step.</h1>
-      <p class="lead">Reach Jubilee by phone, WhatsApp or email — or visit in person.</p>
+      <p class="lead">Reach Jubilee by phone, WhatsApp or email, or visit in person.</p>
     </div>
   </section>
 
@@ -71,18 +71,18 @@
         <span class="eyebrow">VISIT US</span>
         <h2>Our address</h2>
         <p id="contact-address" class="lead" style="max-width: 32ch;"></p>
-        <p style="font-size: var(--step--1); color: var(--gray-600);">The map above centers on Abakaliki, Ebonyi State from Jubilee's supplied map link — it may not pinpoint the exact street. Use "Get Directions" for precise navigation, or call ahead if you're unsure.</p>
+        <p style="font-size: var(--step--1); color: var(--gray-600);">The map pin marks Jubilee's exact location on Afoko Road. Use "Get Directions" to navigate straight to us.</p>
       </div>
       <div class="hero-visual reveal" style="aspect-ratio: 16/9;">
         <div class="map-embed">
           <iframe
-            src="https://www.google.com/maps?q=6.3230608,8.1120116&z=15&output=embed"
-            title="Jubilee Prosthetics & Orthotics — Abakaliki, Ebonyi State"
+            id="contact-map" src="https://www.google.com/maps?q=6.311358,8.103051&z=17&output=embed"
+            title="Jubilee Prosthetics & Orthotics, 79c Afoko Road, Abakaliki"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             allowfullscreen>
           </iframe>
-          <a class="map-embed__cta" href="https://maps.app.goo.gl/u2xPzyUDeC3MGgMq8" target="_blank" rel="noopener">Get Directions ↗</a>
+          <a class="map-embed__cta" id="contact-map-link" href="https://maps.app.goo.gl/YPQy6aU1Nbwqfetg8" target="_blank" rel="noopener">Get Directions ↗</a>
         </div>
       </div>
     </div>
@@ -105,8 +105,8 @@
             <label for="c-message">Message</label>
             <textarea id="c-message" name="message" required></textarea>
           </div>
-          <p class="form-privacy">Jubilee handles your information with care and will only use it to respond to your message. This form does not confirm an appointment.</p>
-          <button type="submit" class="btn btn-primary" style="margin-top:1rem;">Send Message</button>
+          <p class="form-privacy">Jubilee handles your information with care and will only use it to respond to your message. Your message opens in WhatsApp, ready to send to Jubilee. This form does not confirm an appointment.</p>
+          <button type="submit" class="btn btn-primary" style="margin-top:1rem;">Send on WhatsApp</button>
           <div class="form-status" role="status"></div>
         </form>
         <div class="card" style="padding: 1.75rem; border:none; box-shadow: var(--shadow-soft); align-self:start;">
@@ -136,6 +136,8 @@
   document.getElementById("contact-hours").textContent = SITE_CONFIG.businessHours;
   document.getElementById("contact-address").textContent = SITE_CONFIG.address.full;
 
+  document.getElementById("contact-map").src = SITE_CONFIG.mapsEmbedSrc;
+  document.getElementById("contact-map-link").href = SITE_CONFIG.mapsUrl;
   document.getElementById("contact-call-link").href = Jubilee.telLink;
   document.getElementById("contact-wa-link").href = Jubilee.waLink("Hello Jubilee, I would like to get in touch.");
   document.getElementById("contact-email-link").href = Jubilee.mailLink("Enquiry from website");

@@ -38,7 +38,14 @@
     "addressLocality": "Abakaliki",
     "addressRegion": "Ebonyi State",
     "addressCountry": "NG"
-  }
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 6.311358, "longitude": 8.103051 },
+  "sameAs": [
+    "https://www.facebook.com/okoro.chibuzor.908/",
+    "https://www.instagram.com/okoro6949",
+    "https://www.linkedin.com/in/okoro-chibuzor-02676923b",
+    "https://www.tiktok.com/@mr..jubilee"
+  ]
 }
 </script>
 </head>
@@ -50,34 +57,33 @@
 <main id="main">
 
   <!-- ============================================================
-       SECTION 1 — HERO
+       SECTION 1. HERO
        IMAGE SLOT: Home Hero
        SOURCE: assets/images/hero/hero-primary
        REPLACE WHEN: Client provides approved hero photography.
-       ALT TEXT: [WRITE FINAL DESCRIPTIVE ALT TEXT — e.g. "A Jubilee
+       ALT TEXT: [WRITE FINAL DESCRIPTIVE ALT TEXT, e.g. "A Jubilee
        patient walking confidently outdoors with a custom prosthetic leg"]
        ============================================================ -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
+  <section class="hero hero--cinema" aria-label="Welcome to Jubilee">
+    <div class="hero-slides" id="hero-slides" role="group" aria-roledescription="carousel" aria-label="Photos from Jubilee"></div>
+    <div class="hero-shade"></div>
+    <div class="container hero-cinema__inner">
+      <div class="hero-cinema__copy">
         <span class="eyebrow">JUBILEE PROSTHETICS &amp; ORTHOTICS</span>
-        <h1>Turning Challenges<br />Into Triumph.</h1>
-        <p class="lead">Jubilee provides prosthetic and orthotic services built around your mobility, your independence, and your quality of life — with care that meets you where you are.</p>
+        <h1>Turning <span class="hl hl--gold">Challenges</span><br />Into <span class="hl hl--green">Triumph.</span></h1>
+        <p class="lead">Jubilee provides prosthetic and orthotic services built around your mobility, your independence, and your quality of life, with care that meets you where you are.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="book-appointment.html">Book an Appointment</a>
+          <a class="btn btn-gold" href="book-appointment.html">Book an Appointment</a>
           <a class="btn btn-outline" href="services.html">Explore Our Services</a>
         </div>
-        <div class="hero-microlink">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5.1-1.3A10 10 0 1012 2z" stroke="#2E8660" stroke-width="1.6"/></svg>
-          <a href="#" id="hero-wa-link">Prefer WhatsApp? Chat with Jubilee directly</a>
-        </div>
+        <div class="hero-dots" id="hero-dots"></div>
       </div>
-      <div class="hero-visual hero-visual--intro" id="hero-visual"></div>
     </div>
+    <div class="hero-marquee" aria-hidden="true"><div class="hero-marquee__track" id="hero-marquee"></div></div>
   </section>
 
   <!-- ============================================================
-       SECTION 2 — TRUST / BRAND INTRO
+       SECTION 2. TRUST / BRAND INTRO
        ============================================================ -->
   <section class="section section--tight">
     <div class="container split split--60-40 reveal">
@@ -94,7 +100,7 @@
   </section>
 
   <!-- ============================================================
-       SECTION 3 — SERVICES
+       SECTION 3. SERVICES
        ============================================================ -->
   <section class="section section--alt">
     <div class="container">
@@ -113,7 +119,7 @@
   </section>
 
   <!-- ============================================================
-       SECTION 4 — WHY JUBILEE (values)
+       SECTION 4. WHY JUBILEE (values)
        ============================================================ -->
   <section class="section">
     <div class="container">
@@ -126,7 +132,7 @@
   </section>
 
   <!-- ============================================================
-       SECTION 5 — HUMAN STORY
+       SECTION 5. HUMAN STORY
        IMAGE SLOT: assets/images/patients/human-story
        ============================================================ -->
   <section class="section section--dark">
@@ -135,14 +141,14 @@
       <div>
         <span class="eyebrow">MOBILITY, REIMAGINED</span>
         <h2>Movement means something different for everyone.</h2>
-        <p class="lead">For some, it means walking a child to school. For others, it means returning to work, to sport, or simply moving through a day with more confidence. Jubilee's role is to support that meaning — whatever it looks like for you.</p>
+        <p class="lead">For some, it means walking a child to school. For others, it means returning to work, to sport, or simply moving through a day with more confidence. Jubilee's role is to support that meaning, whatever it looks like for you.</p>
         <p style="color:rgba(255,255,255,0.7); font-size: var(--step--1);">Every plan is personal. Outcomes vary by individual circumstance, and Jubilee's team will discuss what's realistic for you during an assessment.</p>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       SECTION 6 — HOW JUBILEE HELPS (process)
+       SECTION 6. HOW JUBILEE HELPS (process)
        ============================================================ -->
   <section class="section section--alt">
     <div class="container">
@@ -177,7 +183,7 @@
   </section>
 
   <!-- ============================================================
-       SECTION 7 — PATIENT STORIES
+       SECTION 7. PATIENT STORIES
        ============================================================ -->
   <section class="section">
     <div class="container">
@@ -188,33 +194,33 @@
         </div>
         <a class="btn btn-outline" href="patient-stories.html" style="justify-self:start;">Read More Stories</a>
       </div>
-      <div class="grid grid-3 reveal-stagger" id="home-story-grid"></div>
-      <!-- <p class="center" style="font-size: var(--step--1); color: var(--gray-600); margin-top: 1.5rem;">The cards above are a sample layout — real patient stories will replace them once shared with consent. <span class="faq-placeholder">[PATIENT TESTIMONIAL REQUIRED]</span></p> -->
+      <div class="grid grid-2 story-grid reveal-stagger" id="home-story-grid"></div>
+      <!-- <p class="center" style="font-size: var(--step--1); color: var(--gray-600); margin-top: 1.5rem;">The cards above are a sample layout, real patient stories will replace them once shared with consent. <span class="faq-placeholder">[PATIENT TESTIMONIAL REQUIRED]</span></p> -->
     </div>
   </section>
 
   <!-- ============================================================
-       SECTION 8 — BEFORE / AFTER
+       SECTION 8. BEFORE / AFTER
        ============================================================ -->
   <section class="section section--navy-100">
     <div class="container">
       <div class="reveal" style="margin-bottom:2.5rem;">
         <span class="eyebrow">TRANSFORMATIONS</span>
         <h2>Before &amp; after, with consent.</h2>
-        <p class="lead">Jubilee will feature approved patient transformations here once photography and consent are in place. Results vary by individual case.</p>
+        <p class="lead">Drag the handle to see how the right device can change everyday movement. Results vary by individual case.</p>
       </div>
-      <!-- BEFORE / AFTER SLIDER — see patient-stories.html for full slot docs.
+      <!-- BEFORE / AFTER SLIDER, see patient-stories.html for full slot docs.
            REPLACE: assets/images/before-after/case-01/{before,after} -->
             <div class="ba-slider reveal" id="home-ba">
                 <div class="ba-slider__before">
                   <img src="assets/images/before-after/case-01-before.jpg"
-                      alt="[WRITE FINAL DESCRIPTIVE ALT TEXT — before]"
+                      alt="A Jubilee clinician fitting a prosthetic leg on a patient during a clinic visit"
                       loading="lazy"
                       onerror="console.warn('[Jubilee] IMAGE FAILED:', this.getAttribute('src'));" />
                 </div>
                 <div class="ba-slider__after">
                   <img src="assets/images/before-after/case-01-after.jpg"
-                      alt="[WRITE FINAL DESCRIPTIVE ALT TEXT — after]"
+                      alt="A young cyclist riding a bicycle outdoors with a prosthetic leg"
                       loading="lazy"
                       onerror="console.warn('[Jubilee] IMAGE FAILED:', this.getAttribute('src'));" />
         </div>
@@ -233,7 +239,7 @@
   </section>
 
   <!-- ============================================================
-       SECTION 9 — PATIENT TIPS / RESOURCES
+       SECTION 9. PATIENT TIPS / RESOURCES
        ============================================================ -->
   <section class="section">
     <div class="container">
@@ -260,7 +266,7 @@
   </section>
 
   <!-- ============================================================
-       SECTION 10 — AI PATIENT GUIDE
+       SECTION 10. AI PATIENT GUIDE
        ============================================================ -->
   <section class="section section--dark">
     <div class="container center reveal" style="max-width: 760px;">
@@ -300,16 +306,30 @@
 <script src="assets/js/widgets.js"></script>
 <script>
   Jubilee.init("index.html");
-
-  document.getElementById("hero-wa-link").href = Jubilee.waLink("Hello Jubilee, I would like to learn more about your services.");
   document.getElementById("cta-band-wa").href = Jubilee.waLink("Hello Jubilee, I would like to learn more about your services.");
   document.getElementById("open-guide-cta").addEventListener("click", () => document.getElementById("jg-open")?.click());
 
   // Hero + human story images
-  document.getElementById("hero-visual").innerHTML = Jubilee.mediaBlock({
-    stock: SITE_CONFIG.stockImages.hero,
-    label: "IMAGE SLOT: Hero Primary Image",
-  });
+  // Hero slideshow
+  (function () {
+    const slides = SITE_CONFIG.heroSlides, wrap = document.getElementById("hero-slides"), dots = document.getElementById("hero-dots");
+    wrap.innerHTML = slides.map((s, i) => `<img class="hero-slide${i ? "" : " is-active"}" src="${s.src}" alt="${s.alt}" style="object-position:${s.position}" ${i ? 'loading="lazy" aria-hidden="true"' : 'fetchpriority="high"'}>`).join("");
+    dots.innerHTML = slides.map((s, i) => `<button type="button" aria-label="Show photo ${i + 1} of ${slides.length}" aria-current="${i === 0}"><i></i></button>`).join("");
+    let cur = 0, timer;
+    const play = () => { clearInterval(timer); timer = setInterval(() => show(cur + 1), 6000); };
+    function show(n) {
+      cur = (n + slides.length) % slides.length;
+      [...wrap.children].forEach((el, i) => { el.classList.toggle("is-active", i === cur); el.setAttribute("aria-hidden", String(i !== cur)); });
+      [...dots.children].forEach((b, i) => b.setAttribute("aria-current", String(i === cur)));
+    }
+    dots.addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { show([...dots.children].indexOf(b)); play(); } });
+    document.addEventListener("visibilitychange", () => (document.hidden ? clearInterval(timer) : play()));
+    play();
+    // services marquee
+    const star = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>';
+    const half = [0, 1].map(() => SITE_CONFIG.serviceCategories.map((s) => `<span>${s.name}</span>${star}`).join("")).join("");
+    document.getElementById("hero-marquee").innerHTML = half + half;
+  })();
   document.getElementById("human-story-visual").innerHTML = Jubilee.mediaBlock({
     stock: SITE_CONFIG.stockImages.humanStory,
     label: "IMAGE SLOT: Human Story",
@@ -335,47 +355,7 @@
     valuesGrid.insertAdjacentHTML("beforeend", `<div class="value-card"><h4>${v.name}</h4><p>${v.note}</p></div>`);
   });
 
-  // Render sample patient-story cards (clearly labeled placeholders — see README)
-  const storyGrid = document.getElementById("home-story-grid");
-  const sampleStories = [
-    {
-      photo: "assets/images/patient-stories/story-01.jpg",
-      alt: "Patient name, description of the photo",
-      name: "Patient Name",
-      service: "Prosthetic Services",
-      quote: "A real patient's story, in their own words.",
-    },
-    {
-      photo: "assets/images/patient-stories/story-02.jpg",
-      alt: "Patient name, description of the photo",
-      name: "Patient Name",
-      service: "Orthotic Services",
-      quote: "A real patient's story, in their own words.",
-    },
-    {
-      photo: "assets/images/patient-stories/story-03.jpg",
-      alt: "Patient name, description of the photo",
-      name: "Patient Name",
-      service: "Gait Assessment & Rehabilitation",
-      quote: "A real patient's story, in their own words.",
-    },
-  ];
-  sampleStories.forEach((s) => {
-    storyGrid.insertAdjacentHTML("beforeend", `
-      <div class="story-card">
-        <div class="story-card__media">
-          <div class="img-real">
-            <img src="${s.photo}" alt="${s.alt}" loading="lazy"
-                 onerror="console.warn('[Jubilee] IMAGE FAILED:', this.getAttribute('src')); this.closest('.img-real').outerHTML='<div class=&quot;img-slot&quot;><div class=&quot;img-slot__inner&quot;><div class=&quot;img-slot__label&quot;>IMAGE SLOT: Patient Story Photo</div><span class=&quot;img-slot__path&quot;>${s.photo}</span></div></div>';" />
-          </div>
-        </div>
-        <div class="story-card__body">
-          <p class="story-card__quote">"${s.quote}"</p>
-          <div class="story-card__meta"><span>${s.name}</span><span>&middot;</span><span>${s.service}</span></div>
-          <span class="story-card__consent">Shared with patient consent</span>
-        </div>
-      </div>`);
-  });
+  Jubilee.renderStories(document.getElementById("home-story-grid"), SITE_CONFIG.stories);
 </script>
 </body>
 </html>
